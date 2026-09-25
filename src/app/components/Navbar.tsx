@@ -4,7 +4,7 @@ import Image from 'next/image'
 const Navbar = () => {
 
     const link = <>
-    <li><Link href='/home'>Workouts</Link></li>
+    <li><Link href='/'>Workouts</Link></li>
     <li><Link href=''>My Plan</Link></li>
     </>
     return (
