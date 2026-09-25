@@ -8,7 +8,7 @@ const Navbar = () => {
     <li><Link href=''>My Plan</Link></li>
     </>
     return (
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar bg-black shadow-sm">
         <div className='flex justify-between gap-45 conatainer mx-auto'>
   <div className="navbar-start">
     <div className="dropdown">
