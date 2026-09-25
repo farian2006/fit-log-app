@@ -1,0 +1,24 @@
+'use client'
+import { GymDataContext } from "@/context/GymContext";
+import { GymType } from "@/Types/type";
+import { useContext } from "react";
+import { MdOutlineAddComment } from "react-icons/md";
+import { toast } from "react-toastify";
+
+const AddButton = ({data}:{data:GymType}) => {
+   
+    const {plan,setPlan} = useContext(GymDataContext);
+   
+    const handleAdd = () => {
+    setPlan(([...plan,data]));
+    toast.success("Added to today's plan Successfully")
+   }
+    return (
+         <button className="btn btn-success bg-[#CCFF00]" onClick={()=>handleAdd()}>
+            <MdOutlineAddComment />
+             Add to today's plan
+            </button>
+    );
+};
+
+export default AddButton;
