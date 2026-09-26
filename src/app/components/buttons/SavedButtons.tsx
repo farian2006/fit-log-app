@@ -6,17 +6,23 @@ import { FaRegBookmark } from "react-icons/fa";
 import { toast } from 'react-toastify';
 
 const SavedButtons = ({data}:{data:GymType}) => {
-   const {save,setSave}=useContext(GymDataContext);
+   const{saveForLater}=useContext(GymDataContext);
 
    const handleSave =() =>{
-    setSave(([...save,data]));
-    toast.success("Plan Saved for later Successfully")
+    if(!data){
+        toast.error("Workout data is missing")
+        return
+    }
+    saveForLater(data);
    }
     return (
-         <button className="btn btn-outline" onClick={()=>handleSave()}>
-                    <FaRegBookmark />
-                     Save for later
-                    </button>
+       <button
+      className="btn btn-outline"
+      onClick={handleSave}
+    >
+      <FaRegBookmark />
+      Save for later
+    </button>
     );
 };
 

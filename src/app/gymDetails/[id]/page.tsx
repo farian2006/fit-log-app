@@ -89,8 +89,8 @@ const page = async({params} :gymDetailsPageProps) => {
         ))}
     </div>
     <div className="flex justify-end card-actionsm m-2 gap-4">
-        <AddButton gym={data}/>
-        <SavedButtons gym={data}/>
+        <AddButton data={data}/>
+        <SavedButtons data={data}/>
     </div>
   </div>
 </div>

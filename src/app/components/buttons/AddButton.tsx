@@ -7,16 +7,28 @@ import { toast } from "react-toastify";
 
 const AddButton = ({data}:{data:GymType}) => {
    
-    const {plan,setPlan} = useContext(GymDataContext);
+    const {addToPlan,plan} = useContext(GymDataContext);
    
     const handleAdd = () => {
-    setPlan(([...plan,data]));
-    toast.success("Added to today's plan Successfully")
+
+        if(!data){
+            toast.error('Excercise data is missing')
+            return
+        }
+
+        const added = addToPlan(data);
+
+        if(!added){
+        toast.error("This excerside is already in today's plan");
+        return
+       }
+
+     toast.success("Added to today's plan successfully")
    }
     return (
          <button className="btn btn-success bg-[#CCFF00]" onClick={()=>handleAdd()}>
             <MdOutlineAddComment />
-             Add to today's plan
+            Add to today's plan
             </button>
     );
 };
