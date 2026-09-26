@@ -119,9 +119,9 @@ return(
 
       <div className="flex justify-end mb-3">
         <div className="flex items-center gap-2">
-          <span className="text-xs text-gray-500">
+          <p className="text-xs text-gray-500">
             Sort By
-          </span>
+          </p>
 
           <select
             value={sortBy}

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image'
+import PlanSaveCount from './PlanSaveCount';
 
 const Navbar = () => {
 
@@ -32,8 +33,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end gap-6">
-    <h2>Plans</h2>
-    <h2>Saved</h2>
+    <PlanSaveCount/>
   </div>
   </div>
 </div>

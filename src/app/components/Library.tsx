@@ -16,11 +16,11 @@ const Library = ({gymProducts}:gymProps) => {
         <div className='mr-30 ml-30 mt-6' id='library'>
           <p className='text-3xl font-bold'>THE LIBRARY</p>
           <p className='text-gray-400 mb-4'>Twelve lifts covering every major muscle group.</p>
-          <div className='grid grid-cols-3 items-center gap-6'>
+          <div className='grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6'>
         {gymProducts.map((gymProducts) => (
           <div key={gymProducts.id}>
             <Link href={`/gymDetails/${gymProducts.id}`}>
-           <div className="card bg-base-100 w-96 shadow-sm hover:bg-gray-800 mb-6">
+           <div className="card bg-base-100 w-96 shadow-sm hover:bg-gray-800 mb-6 ">
   <figure>
     <Image 
       src={gymProducts.image}
