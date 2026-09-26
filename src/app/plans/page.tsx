@@ -66,12 +66,12 @@ const Planspage = () => {
 
   const handleRemovePlan = (id: string | number) => {
     removeFromPlan(id);
-    toast.success("Workout removed from today's plan");
+    toast.warn("Workout removed from today's plan");
   };
 
   const handleRemoveSaved = (id: string | number) => {
     removeFromSaved(id);
-    toast.success("Workout removed from saved");
+    toast.warn("Workout removed from saved");
   };
 return(
      <div className="w-full">
