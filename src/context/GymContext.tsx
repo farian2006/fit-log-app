@@ -2,7 +2,7 @@
 
 import { GymType } from '@/Types/type';
 import React, { useState, createContext } from 'react';
-import { toast } from 'react-toastify';
+import { Id, toast } from 'react-toastify';
 
 interface GymContextType {
   plan: GymType[];
@@ -21,15 +21,17 @@ const GymProvider = ({children}:{children:React.ReactNode}) => {
     const [plan,setPlan]=useState<GymType[]>([]);
     const [save,setSave]=useState<GymType[]>([]);
 
-      const addToPlan = (data: GymType) => {
+      const addToPlan = (data: GymType):boolean => {
     if (!data) {
-      return toast.error("No Data Found!!") 
+      toast.error("No Data Found!!") 
+      return false;
     }
 
     const alreadyAdded =plan.some((item) => String(item.id) === String(data.id));
     
     if(alreadyAdded){
-      return toast.error("Items already added to today's plan");
+      toast.error("Items already added to today's plan");
+      return false;
     }
 
     setPlan((previousPlan) => [...previousPlan,data]);
@@ -80,7 +82,7 @@ const GymProvider = ({children}:{children:React.ReactNode}) => {
 
 
     const sharedData={
-          plan,
+        plan,
         save,
         addToPlan,
         saveForLater,
