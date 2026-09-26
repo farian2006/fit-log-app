@@ -24,18 +24,22 @@ const Planspage = () => {
 
     const [sortBy,setSortBy] =useState("duration")
 
+    const [activeTab, setActiveTab] = useState("plan");
+
+    const activeData =activeTab === "plan" ? plan:save;
+
     const totalMiniutes =useMemo(() => {
-        return plan.reduce(
+        return activeData.reduce(
             (total,item) => total+Number(item.duration || 0),
             0);
-    },[plan]);
+    },[activeData]);
 
       const totalCalories = useMemo(() => {
-    return plan.reduce(
+    return activeData.reduce(
       (total, item) => total + Number(item.caloriesBurned || 0),
       0
     );
-  }, [plan]);
+  }, [activeData]);
 
   const sortedPlan = useMemo(() => {
     return [...plan].sort((a, b) => {
@@ -88,7 +92,7 @@ return(
           </p>
 
           <p className="text-3xl text-[#C2F10D] font-bold mt-1">
-            {plan.length}
+            {activeData.length}
           </p>
         </div>
 
@@ -146,6 +150,7 @@ return(
           className="tab"
           aria-label="Today's Plan"
           defaultChecked
+          onChange={() => setActiveTab("plan")}
         />
 
         <div className="tab-content border-base-300 bg-base-100 p-4">
@@ -236,6 +241,7 @@ return(
           name="plans_tabs"
           className="tab"
           aria-label="Saved"
+          onChange={() => setActiveTab("save")}
         />
 
         <div className="tab-content border-base-300 bg-base-100 p-4">
