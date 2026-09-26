@@ -1,6 +1,4 @@
 import Image from 'next/image'
-import { FaRegBookmark } from "react-icons/fa";
-import { GymType } from '@/Types/type';
 import AddButton from '@/app/components/buttons/AddButton';
 import SavedButtons from '@/app/components/buttons/SavedButtons';
 
