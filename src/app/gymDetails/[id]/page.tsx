@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import AddButton from '@/app/components/buttons/AddButton';
 import SavedButtons from '@/app/components/buttons/SavedButtons';
+import { GymType } from '@/Types/type';
 
 interface gymDetailsPageProps{
     params: Promise<{
@@ -11,7 +12,7 @@ interface gymDetailsPageProps{
 const page = async({params} :gymDetailsPageProps) => {
     const {id}=await params;
     const res=await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`)
-    const data=await res.json();
+    const data:GymType =await res.json();
 
  
     return (

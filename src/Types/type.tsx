@@ -2,7 +2,7 @@ export interface GymType{
     "id": number
     "name": string
     "image": string,
-    "muscleGroups": [string],
+    "muscleGroups": string[],
     "equipment": string,
     "difficulty": string,
     "duration": number,
@@ -11,5 +11,5 @@ export interface GymType{
     "reps": string
     "rating": number,
     "description": string,
-    "instructions": [string]
+    "instructions": string[]
 }
