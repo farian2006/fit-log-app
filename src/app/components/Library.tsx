@@ -1,9 +1,9 @@
 import { GymType } from '@/Types/type';
-import React from 'react';
 import Image from 'next/image'
 import { FaRegStar } from "react-icons/fa";
 import Link from 'next/link';
-
+import { RxStopwatch } from "react-icons/rx";
+import { LiaBurnSolid } from "react-icons/lia";
 
 
 interface gymProps{
@@ -43,9 +43,11 @@ const Library = ({gymProducts}:gymProps) => {
     <p className='text-2xl font-extrabold'>{gymProducts.name}</p>
     <p className='text-gray-400'>{gymProducts.equipment}</p>
     <hr></hr>
-    <div className="card-actions justify-end">
-     <p>{gymProducts.duration}</p>
-     <p>{gymProducts.caloriesBurned}</p>
+    <div className="card-actions justify-end items-center text-gray-400">
+      <RxStopwatch />
+     <p> {gymProducts.duration} min </p>
+     <LiaBurnSolid />
+     <p>{gymProducts.caloriesBurned} kcal</p>
      <FaRegStar />
      <p>{gymProducts.rating}</p>
     </div>
